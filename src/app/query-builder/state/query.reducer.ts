@@ -1,4 +1,3 @@
-import { state } from '@angular/animations';
 import { createReducer, on } from '@ngrx/store';
 import { QueryRow, defaultQueryRow } from './query-row.model';
 import {

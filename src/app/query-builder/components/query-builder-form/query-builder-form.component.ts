@@ -16,13 +16,13 @@ import { selectQueryById } from '../../state/query.selector';
 export class QueryBuilderFormComponent {
   @Input() isDeleteEnabled = true;
   @Input() isBuildMode = true;
+
+  private queryRow?: Readonly<QueryRow>;
   @Input() set queryRowId(value: string) {
     this.store.select(selectQueryById(value)).subscribe((row) => {
       this.queryRow = row;
     });
   }
-
-  private queryRow?: QueryRow;
 
   get metric() {
     return this.queryRow?.metric;
