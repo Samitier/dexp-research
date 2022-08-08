@@ -1,5 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
-import { QueryRow, defaultQueryRow } from './query-row.model';
+import { QueryRow, defaultQueryRow } from '../models/query-row.model';
+import { SpaceAggregation } from '../models/space-aggregation.model';
 import {
   addQueryRow,
   removeQueryRow,
@@ -36,16 +37,16 @@ export const queryReducer = createReducer(
   on(translateToCodeMode, (state) => {
     return state.map((row) => ({
       ...row,
-      code: `${row.metric}:${row.aggregationType}:${row.splitBy}:${row.filterBy}`,
+      code: `${row.metric}:${row.spaceAggregation}:${row.splitBy}:${row.filterBy}`,
     }));
   }),
   on(translateToBuildMode, (state) => {
     return state.map((row) => {
-      const [metric, aggregationType, splitBy, filterBy] = row.code.split(':');
+      const [metric, spaceAggregation, splitBy, filterBy] = row.code.split(':');
       return {
         ...row,
         metric,
-        aggregationType,
+        spaceAggregation: spaceAggregation as SpaceAggregation,
         splitBy,
         filterBy,
       };

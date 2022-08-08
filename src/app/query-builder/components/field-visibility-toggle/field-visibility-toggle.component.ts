@@ -10,7 +10,7 @@ import {
 import {
   defaultQueryRowFieldsVisibility,
   QueryRowFieldsVisibility,
-} from '../../state/query-row.model';
+} from '../../models/query-row-fields-visibility.model';
 
 @Component({
   selector: 'app-field-visibility-toggle',

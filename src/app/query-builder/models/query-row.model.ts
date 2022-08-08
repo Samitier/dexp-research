@@ -1,3 +1,9 @@
+import {
+  defaultQueryRowFieldsVisibility,
+  QueryRowFieldsVisibility,
+} from './query-row-fields-visibility.model';
+import { SpaceAggregation } from './space-aggregation.model';
+
 export interface QueryRow {
   id: string;
   isActive: boolean;
@@ -6,7 +12,7 @@ export interface QueryRow {
   // Would be cool to have this calculated
   code: string;
 
-  aggregationType: string;
+  spaceAggregation: SpaceAggregation;
   splitBy: string;
   filterBy: string;
   sortBy: string;
@@ -15,25 +21,11 @@ export interface QueryRow {
   queryRowFieldsVisibility: QueryRowFieldsVisibility;
 }
 
-export interface QueryRowFieldsVisibility {
-  isFilterByVisible: boolean;
-  isSplitByVisible: boolean;
-  isLimitByVisible: boolean;
-  isSortByVisible: boolean;
-}
-
-export const defaultQueryRowFieldsVisibility: QueryRowFieldsVisibility = {
-  isFilterByVisible: true,
-  isSplitByVisible: true,
-  isLimitByVisible: false,
-  isSortByVisible: false,
-};
-
 export const defaultQueryRow: QueryRow = {
   id: 'A',
   isActive: true,
   metric: '',
-  aggregationType: '',
+  spaceAggregation: SpaceAggregation.NONE,
   code: '',
   splitBy: '',
   filterBy: '',

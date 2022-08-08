@@ -1,5 +1,5 @@
 import { createSelector, createFeatureSelector, select } from '@ngrx/store';
-import { QueryRow } from './query-row.model';
+import { QueryRow } from '../models/query-row.model';
 
 export const selectQuery =
   createFeatureSelector<ReadonlyArray<QueryRow>>('query');

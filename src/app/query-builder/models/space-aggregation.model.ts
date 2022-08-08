@@ -1,0 +1,12 @@
+export enum SpaceAggregation {
+  AVG = 'AVG',
+  SUM = 'SUM',
+  MIN = 'MIN',
+  MAX = 'MAX',
+  COUNT = 'COUNT',
+  MEDIAN = 'MEDIAN',
+  PERCENTILE_10 = 'PERCENTILE_10',
+  PERCENTILE_75 = 'PERCENTILE_75',
+  PERCENTILE_90 = 'PERCENTILE_90',
+  NONE = 'NONE',
+}

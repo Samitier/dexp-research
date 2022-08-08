@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { QueryRow } from './query-row.model';
+import { QueryRow } from '../models/query-row.model';
 
 export const addQueryRow = createAction(
   '[Query] Add query row',

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { QueryRow } from '../../state/query-row.model';
+import { QueryRow } from '../../models/query-row.model';
 import {
   addQueryRow,
   removeQueryRow,
@@ -56,15 +56,15 @@ export class QueryBuilderFormComponent {
     );
   }
 
-  get aggregationType() {
-    return this.queryRow?.aggregationType;
+  get spaceAggregation() {
+    return this.queryRow?.spaceAggregation;
   }
 
-  set aggregationType(value) {
+  set spaceAggregation(value) {
     this.store.dispatch(
       updateQueryRow({
         id: this.queryRow?.id ?? '',
-        key: 'aggregationType',
+        key: 'spaceAggregation',
         value,
       })
     );
